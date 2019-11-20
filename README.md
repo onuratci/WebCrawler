@@ -13,7 +13,8 @@ Html and image crawler for web
 - CMD > java -version
 - java version "8.202.0" gibi versiyon numarası ile birlikte görülmeli.
 
-- CMD prompt üzerinde > java -jar SiteDownloader.jar komutu ile uygulama çalıştırılır.
+- Download crawler jar bundle: https://github.com/onuratci/WebCrawler/blob/master/latest/WebCrawler.jar
+- CMD prompt üzerinde > java -jar WebCrawler.jar komutu ile uygulama çalıştırılır.
 
 
 
