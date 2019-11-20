@@ -1,0 +1,60 @@
+// Apply the java plugin to add basic support for Java, while the `application`
+// adds some basic tasks to package up our application when its ready.
+
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.2.0"
+
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: "com.github.johnrengelman.shadow"
+
+
+
+// Where to get dependencies from. JCenter is the largest repository of jars and very reputable
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'edu.hacettepe.main'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'Onur ATCI'
+}
+// This is where we will declare our dependnecies
+dependencies {
+    compile 'edu.uci.ics:crawler4j:4.4.0'
+    testCompile 'junit:junit:4.12'
+    compile 'org.jfxtras:openjfx-monocle:1.8.0_20'
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    compile 'org.apache.commons:commons-math3:3.6.1'
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    compile 'com.google.guava:guava:23.0'
+
+    compile group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+
+}
+
+
+// Define the main class for the application, which is part of the `application` plugin
+mainClassName = 'edu.hacettepe.Main'
