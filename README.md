@@ -11,10 +11,10 @@ Html and image crawler for web
 - Install JRE and verify JRE version via:
 
 - CMD > java -version
-- java version "8.202.0" gibi versiyon numarası ile birlikte görülmeli.
+- java version "8.202.0" You must see version 8 to run Java FX application.
 
 - Download crawler jar bundle: https://github.com/onuratci/WebCrawler/blob/master/latest/WebCrawler.jar
-- CMD prompt üzerinde > java -jar WebCrawler.jar komutu ile uygulama çalıştırılır.
+- CMD prompt  > java -jar WebCrawler.jar command should be executed. 
 
 
 
